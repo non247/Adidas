@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -102,11 +107,34 @@ class HomeScreen extends StatelessWidget {
                     fit: BoxFit.fitWidth,
                   ),
                 ),
- 
-              ]),
-            )
-            )
-            );
+                ListTile(
+                  minVerticalPadding: 0,
+                    leading: Image.asset(
+                    'assets/icons/clothing.png',
+                    width: 35,
+                  height: 35,
+                  ),
+                    title: const Padding(
+                      padding: EdgeInsets.all(16.0),
+                    child: Text("CLOTHING"),
+                  ),
+                ),
+                ListTile(
+                  minVerticalPadding: 0,
+                    leading: Image.asset(
+                      'assets/icons/accessories.png',
+                    width: 35,
+                  height: 35,
+                ),
+                title: const Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text("ACCESSORIES"),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
-//bottomNavigator
 }
